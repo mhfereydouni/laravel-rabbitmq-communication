@@ -5,8 +5,8 @@ namespace MHFereydouni\RabbitMQ;
 use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
-use MHFereydouni\RabbitMQ\Commands\ConsumeMessages;
-use MHFereydouni\RabbitMQ\Commands\DeclareExchanges;
+use MHFereydouni\RabbitMQ\Commands\ConsumeEventMessages;
+use MHFereydouni\RabbitMQ\Commands\DeclareEventExchanges;
 
 class RabbitMQServiceProvider extends ServiceProvider
 {
@@ -32,8 +32,8 @@ class RabbitMQServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                DeclareExchanges::class,
-                ConsumeMessages::class,
+                DeclareEventExchanges::class,
+                ConsumeEventMessages::class,
             ]);
         }
 

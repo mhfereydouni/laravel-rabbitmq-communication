@@ -9,9 +9,9 @@ use ReflectionClass;
 use MHFereydouni\RabbitMQ\RabbitMQ;
 use MHFereydouni\RabbitMQ\Support\ShouldPublish;
 
-class DeclareExchanges extends Command
+class DeclareEventExchanges extends Command
 {
-    protected $signature = 'rabbitmq:declare-exchanges';
+    protected $signature = 'rabbitmq:declare-event-exchanges';
 
     protected $description = 'declare exchanges';
 

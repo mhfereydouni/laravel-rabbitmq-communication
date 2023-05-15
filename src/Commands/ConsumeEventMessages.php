@@ -7,11 +7,11 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use MHFereydouni\RabbitMQ\RabbitMQ;
 
-class ConsumeMessages extends Command
+class ConsumeEventMessages extends Command
 {
-    protected $signature = 'rabbitmq:consume';
+    protected $signature = 'rabbitmq:consume-events';
 
-    protected $description = 'consume rabbitmq messages';
+    protected $description = 'consume events in the rabbitmq';
 
     private array $events;
 
@@ -19,7 +19,7 @@ class ConsumeMessages extends Command
     {
         parent::__construct();
 
-        $this->events = collect(config('rabbitmq.consumers'))
+        $this->events = collect(config('rabbitmq.event-consumers'))
             ->map(function ($event) {
                 return [
                     'base_event' => $event['event'],

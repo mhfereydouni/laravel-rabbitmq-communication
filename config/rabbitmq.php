@@ -6,8 +6,8 @@ return [
     'user' => env('RABBITMQ_USER', 'guest'),
     'password' => env('RABBITMQ_PASSWORD', 'guest'),
     'vhost' => env('RABBITMQ_VHOST', '/'),
-    
-    'consumers' => [
+
+    'event-consumers' => [
 //        [
 //            'event' => '\App\Events\MyEvent',
 //            'routing_key' => 'my_routing_key', // if this event does not use routing key then remove this line

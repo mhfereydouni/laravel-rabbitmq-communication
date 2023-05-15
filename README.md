@@ -35,7 +35,7 @@ return [
     'password' => env('RABBITMQ_PASSWORD', 'guest'),
     'vhost' => env('RABBITMQ_VHOST', '/'),
 
-    'consumers' => [
+    'event-consumers' => [
 //        [
 //            'event' => '\App\Events\MyEvent',
 //            'routing_key' => 'my_routing_key', // if this event does not use routing key then remove this line
@@ -64,8 +64,12 @@ If you want your event to be published using a routing key, then consider adding
 
 ### declare exchanges in rabbitmq server
 
+```bash
+php artisan rabbitmq:declare-event-exchanges
+```
+
 When a laravel application wants to publish events, you must run this command to create appropriate exchanges on
-RabbitMQ.
+RabbitMQ (Exchanges will be created only for events specified in event service provider).
 For each event it will create an exchange with the name of event class.
 You can read more on exchanges types [here](https://www.rabbitmq.com/tutorials/amqp-concepts.html).
 
@@ -93,7 +97,7 @@ If you have same event in both services (publisher and consumer) then you can om
 Then you can start consuming events with the following command:
 
 ```bash
-php artisan rabbitmq:consume
+php artisan rabbitmq:consume-events
 ```
 
 ## Changelog
