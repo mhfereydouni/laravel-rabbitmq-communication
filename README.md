@@ -20,7 +20,7 @@ composer require mhfereydouni/laravel-rabbitmq-communication
 Then you should publish the package config with running this command:
 
 ```bash
-php artisan vendor:publish --tag="laravel-fluent-rabbitmq-config"
+php artisan vendor:publish --tag="laravel-rabbitmq-communication-config"
 ```
 
 This is the contents of the published config file:
