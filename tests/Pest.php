@@ -1,5 +1,5 @@
 <?php
 
-use Sokanacademy\RabbitMQ\Tests\TestCase;
+use MHFereydouni\RabbitMQ\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

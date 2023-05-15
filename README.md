@@ -1,9 +1,9 @@
 # A package to work with RabbitMQ in an elegant way.
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sokanacademy/laravel-fluent-rabbitmq.svg?style=flat-square)](https://packagist.org/packages/sokanacademy/laravel-fluent-rabbitmq)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/sokanacademy/laravel-fluent-rabbitmq/run-tests?label=tests)](https://github.com/sokanacademy/laravel-fluent-rabbitmq/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/sokanacademy/laravel-fluent-rabbitmq/Check%20&%20fix%20styling?label=code%20style)](https://github.com/sokanacademy/laravel-fluent-rabbitmq/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/sokanacademy/laravel-fluent-rabbitmq.svg?style=flat-square)](https://packagist.org/packages/sokanacademy/laravel-fluent-rabbitmq)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/mhfereydouni/laravel-rabbitmq-communication.svg?style=flat-square)](https://packagist.org/packages/mhfereydouni/laravel-rabbitmq-communication)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/mhfereydouni/laravel-rabbitmq-communication/run-tests?label=tests)](https://github.com/mhfereydouni/laravel-rabbitmq-communication/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/statusmhfereydouni/laravel-rabbitmq-communication/Check%20&%20fix%20styling?label=code%20style)](https://github.com/mhfereydouni/laravel-rabbitmq-communication/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/mhfereydouni/laravel-rabbitmq-communication.svg?style=flat-square)](https://packagist.org/packages/mhfereydouni/laravel-rabbitmq-communication)
 
 This package allows your laravel applications to easily communicate with each other in an event driven way.
 
@@ -14,7 +14,7 @@ One service can publish an event and another one can consume the event and take 
 You can install the package via composer:
 
 ```bash
-composer require sokanacademy/laravel-fluent-rabbitmq:^1.0
+composer require mhfereydouni/laravel-rabbitmq-communication
 ```
 
 Then you should publish the package config with running this command:
@@ -49,7 +49,7 @@ return [
 
 ### Mark an event to be published on RabbitMQ
 
-The only thing you must do is to make sure your event implements `Sokanacademy\RabbitMQ\Support\ShouldPublish` interface
+The only thing you must do is to make sure your event implements `MHFereydouni\RabbitMQ\Support\ShouldPublish` interface
 and that's it.
 All of the event's public properties will be published, and you can have access to them in your consumer. Make sure these properties are primitive or Arrayable.
 
@@ -110,7 +110,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Sokanacademy](https://github.com/sokanacademy)
+- [mhfereydouni](https://github.com/mhfereydouni)
 - [All Contributors](../../contributors)
 
 ## License

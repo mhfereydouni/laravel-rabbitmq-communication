@@ -1,12 +1,12 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ;
+namespace MHFereydouni\RabbitMQ;
 
 use Illuminate\Contracts\Queue\Factory as QueueFactoryContract;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
-use Sokanacademy\RabbitMQ\Commands\ConsumeMessages;
-use Sokanacademy\RabbitMQ\Commands\DeclareExchanges;
+use MHFereydouni\RabbitMQ\Commands\ConsumeMessages;
+use MHFereydouni\RabbitMQ\Commands\DeclareExchanges;
 
 class RabbitMQServiceProvider extends ServiceProvider
 {

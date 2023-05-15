@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ;
+namespace MHFereydouni\RabbitMQ;
 
 use PhpAmqpLib\Channel\AMQPChannel;
 

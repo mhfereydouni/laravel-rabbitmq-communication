@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ\Support;
+namespace MHFereydouni\RabbitMQ\Support;
 
 interface ShouldPublish
 {

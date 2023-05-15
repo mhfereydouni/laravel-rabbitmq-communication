@@ -1,6 +1,6 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ;
+namespace MHFereydouni\RabbitMQ;
 
 use Illuminate\Support\Traits\Conditionable;
 use PhpAmqpLib\Channel\AMQPChannel;

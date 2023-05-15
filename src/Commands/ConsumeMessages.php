@@ -1,11 +1,11 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ\Commands;
+namespace MHFereydouni\RabbitMQ\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Sokanacademy\RabbitMQ\RabbitMQ;
+use MHFereydouni\RabbitMQ\RabbitMQ;
 
 class ConsumeMessages extends Command
 {

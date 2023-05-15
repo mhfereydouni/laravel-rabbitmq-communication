@@ -1,13 +1,13 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ\Commands;
+namespace MHFereydouni\RabbitMQ\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider;
 use Illuminate\Support\Collection;
 use ReflectionClass;
-use Sokanacademy\RabbitMQ\RabbitMQ;
-use Sokanacademy\RabbitMQ\Support\ShouldPublish;
+use MHFereydouni\RabbitMQ\RabbitMQ;
+use MHFereydouni\RabbitMQ\Support\ShouldPublish;
 
 class DeclareExchanges extends Command
 {

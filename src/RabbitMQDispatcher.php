@@ -1,10 +1,10 @@
 <?php
 
-namespace Sokanacademy\RabbitMQ;
+namespace MHFereydouni\RabbitMQ;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Events\Dispatcher;
-use Sokanacademy\RabbitMQ\Support\ShouldPublish;
+use MHFereydouni\RabbitMQ\Support\ShouldPublish;
 
 class RabbitMQDispatcher extends Dispatcher
 {
