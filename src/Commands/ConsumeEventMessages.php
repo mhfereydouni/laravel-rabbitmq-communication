@@ -4,8 +4,10 @@ namespace MHFereydouni\RabbitMQ\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use MHFereydouni\RabbitMQ\RabbitMQ;
+use MHFereydouni\RabbitMQ\Support\EventJobWrapper;
 
 class ConsumeEventMessages extends Command
 {
@@ -58,6 +60,28 @@ class ConsumeEventMessages extends Command
                 && Str::is($event['routing_key'], $routingKey);
         })['map_into_event'];
 
-        event(resolve($event, $payload));
+        $mode = config('rabbitmq.event-consumer-mode', 'sync');
+
+        if ($mode === 'sync') {
+            event(resolve($event, $payload));
+        } elseif ($mode === 'kind-sync') {
+            try {
+                event(resolve($event, $payload));
+            } catch (\Exception $exception) {
+                Log::channel(config('rabbitmq.log-channel'))
+                    ->error(
+                        'Could not dispatch the event consumed from rabbitmq!',
+                        [
+                            'consumed_event' => $payload['event.name'],
+                            'routing_key' => $routingKey,
+                            'was_going_to_map_into' => $event,
+                            'error_message' => $exception->getMessage(),
+                            'error_trace' => $exception->getTraceAsString(),
+                        ]
+                    );
+            }
+        } elseif ($mode === 'job') {
+            EventJobWrapper::dispatch($event, $payload);
+        }
     }
 }
