@@ -23,7 +23,7 @@ return [
      */
     'event-consumer-mode' => 'sync',
 
-    'log-channel' => env('RABBITMQ_LOG_CHANNEL', 'daily'),
+    'log-channel' => env('RABBITMQ_LOG_CHANNEL', env('LOG_CHANNEL', 'stack')),
 
     'queue-name' => 'default',
 ];
